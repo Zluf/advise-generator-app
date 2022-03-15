@@ -20,24 +20,67 @@ body {
   background-color: var(--darkBlue);
   height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
 main {
   width: 90%;
-  height: 45%;
-  border-radius: 3%;
+  max-width: 405px;
+  border-radius: 10px;
   background-color: var(--darkGrayishBlue);
   box-sizing: border-box;
-  padding: 15% 7%;
+  padding: 40px 25px 61px;
   transform: translateY(-20%);
-  /* margin: auto;
-  transform: translateY(calc(100% - 100px)); */
+  text-align: center;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 }
 
-img {
-  width: 100%;
+h2 {
+  color: var(--neonGreen);
+  font-size: 10px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  opacity: 1;
+  transition: all 0.3s;
+}
+
+p {
+  margin: 24px 0;
+  font-size: 20px;
+  color: var(--lightCyan);
+  opacity: 1;
+  transition: all 0.3s;
+}
+
+main img:nth-of-type(2) {
+  display: none;
+}
+
+.btn-refresh {
+  position: absolute;
+  bottom: -25px;
+  left: calc(50% - 25px);
+  z-index: 1;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  border: none;
+  background-color: var(--neonGreen);
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s;
+}
+
+.btn-refresh:hover {
+  box-shadow: 0 0 10px var(--neonGreen);
 }
 
 .attribution {
@@ -46,4 +89,20 @@ img {
 }
 .attribution a {
   color: hsl(228, 45%, 44%);
+}
+
+@media only screen and (min-width: 768px) {
+  main {
+    transform: translateY(0);
+    padding: 40px 35px 61px;
+  }
+
+  main img:first-of-type {
+    display: none;
+  }
+
+  main img:nth-of-type(2) {
+    display: block;
+    width: 100%;
+  }
 }
