@@ -6,9 +6,6 @@ const btn = document.querySelector(".btn-refresh");
 const main = document.querySelector("main");
 
 const fetchData = function () {
-  //   const resp = await fetch("https://api.adviceslip.com/advice");
-  //   const data = await resp.json();
-  //   console.log(data);
   fetch("https://api.adviceslip.com/advice", { cache: "no-store" })
     .then((resp) => resp.json())
     .then((data) => {
